@@ -23,11 +23,13 @@ sigma = 0.3;
 %        mean(double(predictions ~= yval))
 %
 
+% Values after finding the lowest error in Part 7 of ex6.m.
 
+C = 1;
+sigma = 0.1;
 
-
-
-
+% predictions = svmPredict(model, Xval);
+% mean(double(predictions ~= yval));
 
 % =========================================================================
 
