@@ -49,9 +49,25 @@ Theta_grad = zeros(size(Theta));
 
 diff = (X * Theta') - Y;
 diff2 = diff .^ 2;
+%disp(size(diff2)); 5 x 4
+%disp(size(R)); 5 x 4
+
 J = (1/2) * sum(sum(R .* diff2));
 
+theta2 = Theta .^ 2;
+x2 = X .^ 2;
 
+J += ((lambda/2) .* sum(theta2(:))) + ((lambda/2) .* sum(x2(:)))
+
+%disp(size(diff)); 5 x 4
+%disp(size(R .* diff));
+
+lamX = lambda .* X;
+lamTheta = lambda .* Theta;
+
+X_grad = ((R .* diff) * Theta) + lamX;
+
+Theta_grad = ((R .* diff)' * X) + lamTheta;
 
 % =============================================================
 
